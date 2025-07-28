@@ -1,0 +1,116 @@
+.restart-button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.restart-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.restart-button:hover .restart-icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+}
+
+.game-page-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(170, 220, 200, 0.6);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Top row: Guess, Hint, Restart */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+/* Centering guess */
+.guess-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Hint positioned to the right */
+.hint-container {
+  flex-shrink: 0;
+}
+
+/* Center column: Drawing + Keyboard */
+.game-essentials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-essentials-container {
+    gap: 1.5rem;
+  }
+
+  .restart-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .draw-man-container {
+    transform: scale(0.55);
+  }
+}
+
+.game-page-container .category-select-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.category-select-container select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: border-color 0.2s ease-in-out;
+}
+.category-select-container label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+.draw-man-container {
+  transform: scale(0.7);
+  transform-origin: top center;
+  height: auto;
+}
